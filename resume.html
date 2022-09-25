@@ -341,7 +341,7 @@ template {
 				<place></place>
 			</span>
 				<span class="dates">
-				<start-date></start-date> - <end-date></end-date>
+				<start-date func="formatDate"></start-date> - <end-date func="formatDate"></end-date>
 			</span>
 			</div>
 		</div>
@@ -355,9 +355,19 @@ template {
 </template>
 
 <script>
+    function formatDate(dateStr) {
+        var date = new Date(dateStr)
+        // js doesn't know their names by default
+        var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',	'November', 'December'];
+        // https://livecodestream.dev/post/date-manipulation-in-javascript-a-complete-guide#custom-date-formats
+        var year = date.getUTCFullYear()
+        var month = months[date.getUTCMonth()]
+        return month + ' ' + year  // 'September 2022'
+    }
+    
     var templates = document.getElementsByTagName("template")
 
-    function format_template(template_id) {
+    function formatTemplate(template_id) {
         var exp_template = document.getElementById(template_id)
         var exp_items = Array.from(document.getElementsByTagName(template_id))
         exp_items.forEach(function (item) {
@@ -366,7 +376,10 @@ template {
 
             Array.from(item.attributes).forEach(function (attr) {  // go through each attr of item and format it in
                 Array.from(item.getElementsByTagName(attr.name)).forEach(function (tag) {
-                    tag.innerHTML = attr.value  // doing this for every found tag in template
+                    if (tag.hasAttribute('func'))  // if specified function to format the value
+                        tag.innerHTML = eval(tag.getAttribute('func') + "(\"" + attr.value + "\")")
+                    else
+                       tag.innerHTML = attr.value  // doing this for every found tag in template
                 })
                 // item.removeAttribute(attr.name)  // remove attribute
             })
@@ -375,7 +388,7 @@ template {
 			Array.from(item.getElementsByTagName('innerHTML')).forEach(function (tag) {tag.innerHTML = innerHTML})
 		})
     }
-    format_template("xp")
+    formatTemplate("xp")
 </script>
 
 <style>
