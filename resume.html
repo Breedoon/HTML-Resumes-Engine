@@ -379,9 +379,7 @@ template {
         var month = months[date.getUTCMonth()]
         return month + ' ' + year  // 'September 2022'
     }
-    
-    var templates = document.getElementsByTagName("template")
-
+	
     function formatTemplate(template_id) {
         var exp_template = document.getElementById(template_id)
         var exp_items = Array.from(document.getElementsByTagName(template_id))
@@ -403,7 +401,13 @@ template {
 			Array.from(item.getElementsByTagName('innerHTML')).forEach(function (tag) {tag.innerHTML = innerHTML})
 		})
     }
-    formatTemplate("xp")
+	
+	var templates = Array.from(document.getElementsByTagName("template"))
+	
+	templates.forEach(function (template) {
+		formatTemplate(template.getAttribute('id'))
+	})
+	
 </script>
 
 <style>
