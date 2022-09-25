@@ -29,25 +29,6 @@ p {
 	color: #444;
 }
 
-.mainDetails {
-	padding: 25px 35px;
-	border-bottom: 2px solid #cf8a05;
-	background: #ededed;
-}
-
-#name h1 {
-	font-size: 2.5em;
-	font-weight: 700;
-	/*font-family: 'Rokkitt', Helvetica, Arial, sans-serif;*/
-	margin-bottom: -6px;
-}
-
-#name h2 {
-	font-size: 2em;
-	margin-left: 2px;
-	/*font-family: 'Rokkitt', Helvetica, Arial, sans-serif;*/
-}
-
 #mainArea {
 	padding: 0 40px;
 }
@@ -64,35 +45,6 @@ p {
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
 }
-
-#name {
-	float: left;
-}
-
-#contactDetails {
-	float: right;
-}
-
-#contactDetails ul {
-	list-style-type: none;
-	font-size: 0.9em;
-	margin-top: 2px;
-}
-
-#contactDetails ul li {
-	margin-bottom: 3px;
-	color: #444;
-}
-
-#contactDetails ul li a, a[href^=tel] {
-	color: #444;
-	text-decoration: none;
-}
-
-#contactDetails ul li a:hover {
-	color: #cf8a05;
-}
-
 
 section {
 	border-top: 1px solid #dedede;
@@ -200,21 +152,17 @@ template {
 </style>
 
 <div id="cv">
-	<div class="mainDetails">
-		<div id="name">
-			<h1>Joe Bloggs</h1>
-			<h2>Job Title</h2>
-		</div>
-
-		<div id="contactDetails">
-			<ul>
-				<li>e: <a href="mailto:joe@bloggs.com" target="_blank">joe@bloggs.com</a></li>
-				<li>w: <a href="http://www.bloggs.com">www.bloggs.com</a></li>
-				<li>m: 01234567890</li>
-			</ul>
-		</div>
-		<div class="clear"></div>
-	</div>
+	<cv-header>
+		<cv-header-name
+				name="Daniel Bredun"
+				job-title="Data Scientist &amp; Engineer"
+		></cv-header-name>
+		<cv-header-contacts>
+				<li><a href="mailto:joe@bloggs.com" target="_blank">joe@bloggs.com</a></li>
+				<li><a href="https://www.bloggs.com">www.bloggs.com</a></li>
+				<li>01234567890</li>
+		</cv-header-contacts>
+	</cv-header>
 
 	<div id="mainArea">
 		<section id="summary">
@@ -290,26 +238,12 @@ template {
 			<div class="sectionTitle">
 				<h1>Education</h1>
 			</div>
-
-			<div class="sectionContent">
-				<article>
-					<h2>College/University</h2>
-					<p class="xp-details">Qualification</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
-				</article>
-
-				<article>
-					<h2>College/University</h2>
-					<p class="xp-details">Qualification</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
-				</article>
-			</div>
-			<div class="clear"></div>
 		</section>
 
 	</div>
 </div>
 
+<!-- Experience Header -->
 <style>
 .xp-header {
 	display: flex;
@@ -366,7 +300,79 @@ template {
 
 	</article>
 
+</template>
 
+<!-- CV Header -->
+<template id="cv-header">
+		<div class="mainDetails">
+			<innerHTML></innerHTML>
+		<div class="clear"></div>
+		</div>
+</template>
+
+<!-- CV Header name -->
+<style>
+.mainDetails {
+	padding: 25px 35px;
+	border-bottom: 2px solid #cf8a05;
+	background: #ededed;
+}
+#name h1 {
+	font-size: 2.5em;
+	font-weight: 700;
+	/*font-family: 'Rokkitt', Helvetica, Arial, sans-serif;*/
+	margin-bottom: -6px;
+}
+
+#name h2 {
+	font-size: 2em;
+	margin-left: 2px;
+	/*font-family: 'Rokkitt', Helvetica, Arial, sans-serif;*/
+}
+
+#name {
+	float: left;
+}
+</style>
+<template id="cv-header-name">
+		<div id="name">
+			<h1><name></name></h1>
+			<h2><job-title></job-title></h2>
+		</div>
+</template>
+
+<!-- CV Header contact details -->
+<style>
+#contactDetails {
+	float: right;
+}
+
+#contactDetails ul {
+	list-style-type: none;
+	font-size: 0.9em;
+	margin-top: 2px;
+}
+
+#contactDetails ul li {
+	margin-bottom: 3px;
+	color: #444;
+}
+
+#contactDetails ul li a, a[href^=tel] {
+	color: #444;
+	text-decoration: none;
+}
+
+#contactDetails ul li a:hover {
+	color: #cf8a05;
+}
+</style>
+<template id="cv-header-contacts">
+		<div id="contactDetails">
+			<ul id="contactDetailsList">
+				<innerHTML></innerHTML>
+			</ul>
+		</div>
 </template>
 
 <script>
