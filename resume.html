@@ -229,13 +229,22 @@ template {
 			</div>
 
 			<div class="sectionContent">
-                <xp
-                        company="Minerva University"
-                        role="B.S. in Computer Science"
-                        place="San Francisco, CA"
-                        start-date="2019-09-01"
-                        end-date="2023-05-24"
-                ></xp>
+				<xp company="Minerva University"
+					role="B.S. in Computer Science"
+					place="San Francisco, CA"
+					start-date="2019-09-01"
+					end-date="2023-05-24">
+
+					<ul class="commalist">
+						<li>Machine Learning for Science and Profit</li>
+						<li>Computational Bayesian Statistics</li>
+						<li>Prediction and Causal Inference</li>
+						<li>Simulations and Decision Making</li>
+						<li>Artificial Intelligence Algorithms</li>
+						<li>Algorithms and Data Structures</li>
+					</ul>
+
+				</xp>
 			</div>
 			<div class="clear"></div>
 		</section>
@@ -347,20 +356,24 @@ template {
 
 <script>
     var templates = document.getElementsByTagName("template")
-    
+
     function format_template(template_id) {
         var exp_template = document.getElementById(template_id)
         var exp_items = Array.from(document.getElementsByTagName(template_id))
         exp_items.forEach(function (item) {
 			var innerHTML = item.innerHTML  // save to later insert into proper place
             item.innerHTML = exp_template.innerHTML  // copy template inside of the item
+
             Array.from(item.attributes).forEach(function (attr) {  // go through each attr of item and format it in
                 Array.from(item.getElementsByTagName(attr.name)).forEach(function (tag) {
                     tag.innerHTML = attr.value  // doing this for every found tag in template
                 })
                 // item.removeAttribute(attr.name)  // remove attribute
             })
-        })
+
+			// Now copying original innerHTML into where it's supposed to be on the template
+			Array.from(item.getElementsByTagName('innerHTML')).forEach(function (tag) {tag.innerHTML = innerHTML})
+		})
     }
     format_template("xp")
 </script>
