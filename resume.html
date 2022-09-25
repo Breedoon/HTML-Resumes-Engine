@@ -186,6 +186,14 @@ section:last-child {
 .commalist li:last-child:after {
     content: "";
 }
+
+b {
+    font-weight: bold;
+}
+
+ul.xp-description-bullets {
+    padding-left: 4%;
+}
 template {
     visibility: hidden;
 }
@@ -235,16 +243,23 @@ template {
 					start-date="2019-09-01"
 					end-date="2023-05-24">
 
-					<ul class="commalist">
-						<li>Machine Learning for Science and Profit</li>
-						<li>Computational Bayesian Statistics</li>
-						<li>Prediction and Causal Inference</li>
-						<li>Simulations and Decision Making</li>
-						<li>Artificial Intelligence Algorithms</li>
-						<li>Algorithms and Data Structures</li>
-					</ul>
+                    <div class="xp-description">
+                        <ul class="xp-description-bullets">
+                            <li><b>Major GPA:</b> 4.0</li>
+                            <li><b>Relevant Coursework</b>:
+                                <ul class="commalist">
+                                    <li>Machine Learning for Science and Profit</li>
+                                    <li>Computational Bayesian Statistics</li>
+                                    <li>Prediction and Causal Inference</li>
+                                    <li>Simulations and Decision Making</li>
+                                    <li>Artificial Intelligence Algorithms</li>
+                                    <li>Algorithms and Data Structures</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
 
-				</xp>
+                </xp>
 			</div>
 			<div class="clear"></div>
 		</section>
@@ -320,6 +335,7 @@ template {
 .xp-details .place {
 	width: 100%;
 	text-align: end;
+    font-weight: bold;
 }
 
 .xp-details .dates {
@@ -328,7 +344,6 @@ template {
   	margin-top: var(--xp-details-font-size);
 	text-align: end;
 }
-
 </style>
 <template id="xp">
 	<article>
