@@ -439,6 +439,8 @@ section:last-child {
 <script>
     function formatDate(dateStr) {
         var date = new Date(dateStr)
+		if (date.toString() === "Invalid Date")
+			return dateStr
         // js doesn't know their names by default
         var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',	'November', 'December'];
         // https://livecodestream.dev/post/date-manipulation-in-javascript-a-complete-guide#custom-date-formats
