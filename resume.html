@@ -45,18 +45,73 @@
 		</cv-section>
 
 		<cv-section section-title="Skills">
-			<div class="sectionContent">
-				<ul class="keySkills">
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-				</ul>
-			</div>
+			<table class="skills-table">
+			  <tr>
+				<td class="table-header"></td>
+				<td class="table-header">Proficient</td>
+				<td class="table-header">Familiar</td>
+			  </tr>
+				<tr>
+					<td class="table-header">Technical Languages</td>
+					<td>
+						<ul class="commalist">
+							<li>Python</li>
+							<li>SQL</li>
+						</ul>
+					</td>
+					<td>
+						<ul class="commalist">
+							<li>Python</li>
+							<li>SQL</li>
+							<li>R</li>
+							<li>Stan</li>
+							<li>Swift</li>
+							<li>Java</li>
+							<li>C++</li>
+							<li>Ruby</li>
+							<li>JavaScript</li>
+							<li>HTML &amp; CSS</li>
+							<li>LaTeX</li>
+						</ul>
+					</td>
+				</tr>
+			  <tr>
+				<td class="table-header">Technical Tools</td>
+					<td>
+						<ul class="commalist">
+							<li>NumPy</li>
+							<li>Pandas</li>
+							<li>Matplotlib</li>
+							<li>Scikit</li>
+							<li>PostgreSQL</li>
+						</ul>
+					</td>
+				  <td>
+					  <ul class="commalist">
+						  <li>TensorFlow</li>
+						  <li>Keras</li>
+						  <li>Plotly</li>
+						  <li>SciPy</li>
+						  <li>MongoDB</li>
+<!--						  <li>Django</li>-->
+<!--						  <li>Flask</li>-->
+<!--						  <li>VueJS</li>-->
+<!--						  <li>AngularJS</li>-->
+<!--						  <li>D3.js</li>-->
+<!--						  <li>ECharts.js</li>-->
+<!--						  <li>Beautiful Soap</li>-->
+<!--						  <li>lxml</li>-->
+<!--						  <li>Selenium</li>-->
+<!--						  <li>Bootstrap</li>-->
+<!--						  <li>jQuery</li>-->
+<!--						  <li>AJAX</li>-->
+<!--						  <li>Telegram API</li>-->
+<!--						  <li>Google API (Sheets \& Drive)</li>-->
+<!--						  <li>Android SDK</li>-->
+					  </ul>
+				  </td>
+			  </tr>
+			</table>
 		</cv-section>
 
 		<cv-section section-title="Education">
@@ -105,11 +160,42 @@ b {
     font-weight: bold;
 }
 
+i {
+    font-style: italic;
+}
+
 ul.xp-description-bullets {
     padding-left: 4%;
 }
 template {
     visibility: hidden;
+}
+/* Skills */
+.skills-table {
+	width: 100%
+}
+.table-header {
+	font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+table td {
+  padding: 3px;
+  border: 1px solid black;
+}
+table tr:first-child td {
+  border-top: 0;
+}
+table tr td:first-child {
+  border-left: 0;
+}
+table tr:last-child td {
+  border-bottom: 0;
+}
+table tr td:last-child {
+  border-right: 0;
 }
 </style>
 
