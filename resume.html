@@ -207,6 +207,10 @@ table tr td:last-child {
     align-items: center;
 }
 
+.xp-title {
+	font-size: 120%;
+}
+
 .xp-title .role {
 	font-weight: bold;
 }
@@ -235,7 +239,13 @@ table tr td:last-child {
 	text-align: end;
 }
 
-
+xp {
+	display: block;
+	padding: 20px 0 0;
+}
+xp:first-child {
+	padding: 0px 0 0;
+}
 .commalist {
   display: inline;
   list-style: none;
@@ -253,7 +263,7 @@ table tr td:last-child {
 }
 </style>
 <template id="xp">
-	<article>
+	<article class="xp-item">
 		<div class="xp-header">
 			<div class="xp-title"><span class="role"><role></role></span>, <span class="company"><company></company></span>
 			</div>
