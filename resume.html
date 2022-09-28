@@ -13,7 +13,7 @@
 		</cv-header-contacts>
 	</cv-header>
 
-	<div id="mainArea">
+	<div id="main-area">
 		<cv-section section-title="About Me">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
 		</cv-section>
@@ -288,7 +288,7 @@ p {
 	color: #444;
 }
 
-#mainArea {
+#main-area {
 	padding: 0 5%;
 }
 
@@ -434,7 +434,7 @@ xp:first-child {
 
 <!-- CV Header -->
 <template id="cv-header">
-		<div class="mainDetails">
+		<div class="main-details">
 			<innerHTML></innerHTML>
 		<div class="clear"></div>
 		</div>
@@ -442,7 +442,7 @@ xp:first-child {
 
 <!-- CV Header name -->
 <style>
-.mainDetails {
+.main-details {
 	padding: 12px 5%;
 	border-bottom: 2px solid var(--accent-color);
 	background: #ededed;
@@ -471,60 +471,38 @@ xp:first-child {
 
 <!-- CV Header contact details -->
 <style>
-#contactDetails {
+#contact-details {
 	float: right;
 	/*line-height: 70%;*/
 }
 
-#contactDetails ul {
+#contact-details ul {
 	list-style-type: none;
 	font-size: 90%;
 }
 
-/*#contactDetailsList {*/
-/*    font-size: 0; !* Eliminate spacing between inline block elements *!*/
-/*    text-align: justify;*/
-/*    width: 100%;*/
-/*    !*background: #cacaca;*!*/
-/*    list-style: none;*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*}*/
-/*#contactDetailsList:after {*/
-/*    content: '';*/
-/*    display: inline-block;*/
-/*    width: 100%;*/
-/*    height: 0;*/
-/*}*/
-/*#contactDetailsList li {*/
-/*    display: inline-block;*/
-/*    !*background: #fafafa;*!*/
-/*    font-size: 1rem; !* Reuse root element's font size *!*/
-/*}*/
-
-
-#contactDetails ul li {
+#contact-details ul li {
 	color: #444;
 }
 
-#contactDetails ul li a, a[href] {
+#contact-details ul li a {
 	color: #444;
 	text-decoration: none;
 }
 
-#contactDetails ul li a:hover {
+#contact-details ul li a:hover {
 	color: var(--accent-color);
 }
 
-#name, #contactDetails {
+#name, #contact-details {
     /*float: none;*/
     /*width: 100%;*/
     text-align: center;
 }
 </style>
 <template id="cv-header-contacts">
-		<div id="contactDetails">
-			<ul id="contactDetailsList">
+		<div id="contact-details">
+			<ul id="contact-detailsList">
 				<innerHTML></innerHTML>
 			</ul>
 		</div>
@@ -544,32 +522,32 @@ section:last-child {
 	padding: 20px 0 10px;
 }
 
-.sectionTitle {
+.section-title {
 	float: left;
 	width: 25%;
 }
 
-.sectionContent {
+.section-content {
 	float: right;
 	width: 72.5%;
 }
 
-.sectionTitle h1 {
+.section-title h1 {
 	font-size: 100%;
 	color: var(--accent-color);
 }
 
-.sectionContent h2 {
+.section-content h2 {
 	/*font-family: 'Rokkitt', Helvetica, Arial, sans-serif;*/
 	font-size: 12%;
 }
 
-.sectionTitle, .sectionContent {
+.section-title, .section-content {
     float: none;
     width: 100%;
 }
 
-.sectionTitle {
+.section-title {
     font-size: 125%;
 }
 
@@ -577,10 +555,10 @@ section:last-child {
 <template id="cv-section">
 	<section>
 			<article>
-				<div class="sectionTitle">
+				<div class="section-title">
 					<h1><section-title></section-title></h1>
 				</div>
-				<div class="sectionContent">
+				<div class="section-content">
 					<innerHTML></innerHTML>
 				</div>
 			</article>
