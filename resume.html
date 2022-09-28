@@ -1,4 +1,4 @@
-<link href="https://fonts.cdnfonts.com/css/latin-modern-roman" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/neuton-3" rel="stylesheet"> <!--https://www.cdnfonts.com/neuton-3.font-->
 
 <div id="cv">
 	<cv-header>
@@ -249,7 +249,7 @@
 <!-- General Style -->
 <style>
 :root {
-	--font-size: 12px;
+	--font-size: 11pt;
 }
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
     border: 0;
@@ -265,9 +265,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 html, body {
     background: #f3f3f3;
-	font-family: 'LMRoman10', sans-serif;
+	/*font-family: 'LMRoman10', sans-serif;*/
+	font-family: 'Neuton', serif;
+	/*font-family: 'Times New Roman', serif;*/
+	font-weight: 200; /* 200, 300, or 400*/
     font-size: var(--font-size);
     color: #222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Neuton SC', sans-serif;
+	/*font-family: 'Times New Roman', serif;*/
+	/*font-variant: small-caps;*/
+	letter-spacing: 1px;
 }
 
 .clear {clear: both;}
@@ -282,7 +292,11 @@ p {
 }
 
 b {
-    font-weight: bold;
+    font-weight: 300;
+}
+
+h1 b, h2 b, h3 b, h4 b, h5 b, h6 b {
+    font-weight: 500;
 }
 
 i {
@@ -333,15 +347,18 @@ table tr td:last-child {
 }
 
 .xp-title {
-	font-size: 120%;
-}
-
-.xp-title .role {
-	font-weight: bold;
+	/*font-size: 120%;*/
 }
 
 .xp-title .company {
-	font-style: italic;
+	font-weight: 500; /* 700 or 800*/
+	font-size: 130%;
+	/*text-transform: uppercase;*/
+}
+
+.xp-title .role {
+	font-size: var(--font-size);
+	line-height: 80%;
 }
 
 .xp-details {
@@ -390,7 +407,11 @@ xp:first-child {
 <template id="xp">
 	<article class="xp-item">
 		<div class="xp-header">
-			<div class="xp-title"><span class="role"><role></role></span>, <span class="company"><company></company></span>
+			<div class="xp-title">
+				<h3 class="company"><b>
+					<company></company>
+				</b></h3>
+				<h3 class="role"><role></role></h3>
 			</div>
 
 			<div class="xp-details">
@@ -424,17 +445,16 @@ xp:first-child {
 	padding: 12px 5%;
 	border-bottom: 2px solid #cf8a05;
 	background: #ededed;
+
 }
 #name h1 {
-	font-size: 200%;
+	font-size: 250%;
 	font-weight: 700;
-	/*font-family: 'Rokkitt', Helvetica, Arial, sans-serif;*/
-	margin-bottom: -6%;
+	line-height: 70%;
 }
 
 #name h2 {
 	font-size: 150%;
-	/*font-family: 'Rokkitt', Helvetica, Arial, sans-serif;*/
 }
 
 #name {
@@ -452,6 +472,7 @@ xp:first-child {
 <style>
 #contactDetails {
 	float: right;
+	/*line-height: 70%;*/
 }
 
 #contactDetails ul {
@@ -459,11 +480,33 @@ xp:first-child {
 	font-size: 90%;
 }
 
+/*#contactDetailsList {*/
+/*    font-size: 0; !* Eliminate spacing between inline block elements *!*/
+/*    text-align: justify;*/
+/*    width: 100%;*/
+/*    !*background: #cacaca;*!*/
+/*    list-style: none;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+/*#contactDetailsList:after {*/
+/*    content: '';*/
+/*    display: inline-block;*/
+/*    width: 100%;*/
+/*    height: 0;*/
+/*}*/
+/*#contactDetailsList li {*/
+/*    display: inline-block;*/
+/*    !*background: #fafafa;*!*/
+/*    font-size: 1rem; !* Reuse root element's font size *!*/
+/*}*/
+
+
 #contactDetails ul li {
 	color: #444;
 }
 
-#contactDetails ul li a, a[href^=tel] {
+#contactDetails ul li a, a[href] {
 	color: #444;
 	text-decoration: none;
 }
@@ -512,9 +555,7 @@ section:last-child {
 }
 
 .sectionTitle h1 {
-	font-family: 'LMRomanCaps10', sans-serif;
-	font-style: italic;
-	font-size: 150%;
+	font-size: 100%;
 	color: #cf8a05;
 }
 
