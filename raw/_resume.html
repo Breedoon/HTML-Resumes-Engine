@@ -627,3 +627,9 @@ section:last-child {
   margin: 0!important;
 }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+      document.body.setAttribute("style", "zoom: " + window.innerHeight / document.getElementById("cv").offsetHeight)
+  });
+</script>
