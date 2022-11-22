@@ -1,0 +1,90 @@
+@font-face {
+    font-family: neuton;
+    font-style: normal;
+    font-weight: 500;
+    src: local('Neuton'), url(Neuton-Regular.woff) format('woff')
+}
+
+@font-face {
+    font-family: neuton;
+    font-style: normal;
+    font-weight: 200;
+    src: local('Neuton'), url(Neuton-Extralight.woff) format('woff')
+}
+
+@font-face {
+    font-family: neuton;
+    font-style: normal;
+    font-weight: 300;
+    src: local('Neuton'), url(Neuton-Light.woff) format('woff')
+}
+
+@font-face {
+    font-family: neuton;
+    font-style: normal;
+    font-weight: 500;
+    src: local('Neuton'), url(Neuton-Italic.woff) format('woff')
+}
+
+@font-face {
+    font-family: neuton;
+    font-style: italic;
+    font-weight: 500;
+    src: local('Neuton'), url(Neuton-ExtralightItalic.woff) format('woff')
+}
+
+@font-face {
+    font-family: neuton;
+    font-style: normal;
+    font-weight: 700;
+    src: local('Neuton'), url(Neuton-Bold.woff) format('woff')
+}
+
+@font-face {
+    font-family: neuton;
+    font-style: normal;
+    font-weight: 800;
+    src: local('Neuton'), url(Neuton-Extrabold.woff) format('woff')
+}
+
+@font-face {
+    font-family: neuton sc;
+    font-style: normal;
+    font-weight: 500;
+    src: local('Neuton SC'), url(Neuton-SC-Regular.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'neuton cursive';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Neuton Cursive'), url(NeutonCursive-Regular.woff) format('woff')
+}
+
+@font-face {
+    font-family: neuton sc;
+    font-style: normal;
+    font-weight: 200;
+    src: local('Neuton SC'), url(Neuton-SC-Extralight.woff) format('woff')
+}
+
+@font-face {
+    font-family: neuton sc;
+    font-style: normal;
+    font-weight: 200;
+    src: local('Neuton SC'), url(Neuton-SC-Light.woff) format('woff')
+}
+
+@font-face {
+    font-family: neuton sc;
+    font-style: normal;
+    font-weight: 700;
+    src: local('Neuton SC'), url(Neuton-SC-Bold.woff) format('woff')
+}
+
+@font-face {
+    font-family: neuton sc;
+    font-style: normal;
+    font-weight: 800;
+    src: local('Neuton SC'), url(Neuton-SC-Extrabold.woff) format('woff')
+}
